@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="Navigation.css">
+    <link rel="icon" type="image/x-icon" href= "https://www.iconpacks.net/icons/2/free-airplane-icon-1755-thumb.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+    <script src="https://kit.fontawesome.com/18257c577b.js" crossorigin="anonymous"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$( "#form" ).submit(function(event) {
+				event.preventDefault();
+
+				$.ajax({
+					type: 'POST',
+					url: '/login',
+					data: $('#form').serialize(),
+					dataType: "json",
+					success: function(response){
+						//alert("a");
+						//console.log(response.Success);
+						$('#form')[0].reset();
+
+						document.getElementById("check").innerHTML=response.Success;
+         					//ADD THIS CODE
+         					setTimeout(function(){
+         						document.getElementById("check").innerHTML="";
+         					},3000);
+         					if (response.Success=="Success!") {
+         						document.getElementById("aa").click();
+         					};
+         				},
+         				error: function() {
+         				}
+         			})
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<h1 id="skyhigh">SKYHIGH</h1>
+  <ul class="nav-bar">
+    <li class="lis" id="home"><a href="/" class="anchor">Home</a></li>
+    <li class="lis" id="destination">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Destinations
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/locations/india.html">India</a></li>
+          <li><a class="dropdown-item" href="/locations/Sri lanka.html">Sri lanka</a></li>
+          <li><a class="dropdown-item" href="/locations/nepal.html">Nepal</a></li>
+          <li><a class="dropdown-item" href="/locations/maldives.html">Maldives</a></li>
+          <li><a class="dropdown-item" href="/locations/indonesia.html">Indonesia</a></li>
+          <li><a class="dropdown-item" href="/locations/malasia.html">Malasia</a></li>
+        </ul>
+      </div></a>
+    </li>
+    <li class="lis" id="contact"><a href="/contact" class="anchor">Contact</a></li>
+    <li class="lis" id="services"><a href="/services" class="anchor">Services</a></li>
+    <li class="lis" id="about"><a href="/about" class="anchor">About us</a></li>
+    <li class="lis" id="loginform"><a href="/Register" class="anchor">Login</a></li>
+
+    <li class="lis"><a href="#" class="anchor">
+        <div class="search-container">
+          <form action="/">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </a></li>
+  </ul>
+<div id="login-container-flex">
+	<div class="col-md-4 col-md-offset-4" id="register-container">
+		<div>
+			<p>Login</p>
+		</div>
+		<div class="form-group">
+			<form id="form" method="post" >
+				<input type="text" name="email" placeholder="E-mail" required="" class="form-control"><br/>
+				<input type="password" name="password" placeholder="Password" required="" class="form-control"><br/>
+				<input type="submit" value="Login" class="btn btn-success">
+			</form>
+		</div>
+		<div class="mssg bg-danger">
+			<span id="check" ></span>
+		</div>
+		<div id="LangTable"><a href="/profile" id="aa"></a>
+		</div>
+		<div><span>Do you forgot password?</span><a href="/forgetpass">Click here</a></div>
+		<div><span>Create a new Account?</span><a href="/">Register here</a></div>
+
+		
+		
+	</div>
+</div>
+<div class="footer">
+    <div class="heading">
+      <h2>Sky High<sup>™</sup></h2>
+    </div>
+    <div class="content">
+      <div class="services">
+        <h4>Services</h4>
+        <p><a href="#" class="hover">transportation</a></p>
+        <p><a href="#"  class="hover">health care</a></p>indonesia.html
+        <p><a href="#"  class="hover">hotels</a></p>
+        <p><a href="#"  class="hover">food and drinks</a></p>
+        <p><a href="#"  class="hover">guide</a></p>
+        <p><a href="#"  class="hover">Travel</a></p>
+        <p><a href="#"  class="hover">Adventures</a></p>
+      </div>
+      <div class="social-media">
+        <h4>Social</h4>
+        
+        <p>
+          <a href="#"
+            ><i class="fab fa-twitter"  class="hover"></i> Twitter</a
+          >
+        </p>
+        
+        <p>
+          <a href="https://www.facebook.com/codewithfaraz" class="hover"
+            ><i class="fab fa-facebook"></i> Facebook</a
+          >
+        </p>
+        <p>
+          <a href="https://www.instagram.com/codewithfaraz"  class="hover"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+        </p>
+      </div>
+      <div class="links">
+        <h4>Quick links</h4>
+        <p><a href="#"  class="hover">Home</a></p>
+        <p><a href="#"  class="hover">About</a></p>
+        <p><a href=""  class="hover">Contact</a></p>
+      </div>
+      <div class="details">
+        <h4 class="address">Address</h4>
+        <p>yeshwantrao chavan college of engineering,wanadongri ,Nagpur </p>
+        <h4 class="mobile">Mobile</h4>
+        <p><a href="#">8390290379</a></p>
+        <h4 class="mail"  class="hover">skyhigh360@gmail.com</h4>
+      </div>
+    </div>
+    <footer>
+      <hr />
+      © 2023 Sky High.
+    </footer>
+</div>
+</body>
+</html>
