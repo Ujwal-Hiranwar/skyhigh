@@ -15,7 +15,7 @@ This is a Simple User Registration & Login systems app done with Node.js Framewo
 ## Getting Started
 
 ### Deployment
-This Project is **[Live](https://reg-login-using-nodejs-mongodb.herokuapp.com/)** on: 🌍 **https://reg-login-using-nodejs-mongodb.herokuapp.com/**
+This Project is **[Live](https://skyhighproject.vercel.app/)** on: 🌍 **https://reg-login-using-nodejs-mongodb.herokuapp.com/**
 
 ## Running the tests
 
@@ -76,13 +76,6 @@ node server.js
 
 The server will start Running on
 + http://localhost:3000/
-
-
-## Author
-
-| Author                | Profile Link                                       |
-| --------------------- | :------------------------------------------------- |
-| **Guru HariHaraun N** | **[Guru Roxz](https://github.com/guruhariharaun)** |
 
 
 ## Acknowledgments
